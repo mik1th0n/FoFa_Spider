@@ -12,11 +12,20 @@ import base64
 import urllib.parse
 import time
 
-API_KEY = ""  # API KEY
-FOFA_EMAIL = ""  # Account
+API_KEY = "xxx"  # 填写fofa API的KEY
+FOFA_EMAIL = "xxx"  # 填写fofa登录邮箱
 
+
+'''
+    【参数释义】
+    email：fofa登录邮箱
+    key：fofa API key
+    qbase64（string）：BASE64编码
+    size（integer）：每次查询返回记录数，默认为100条，最大可设置为10000条
+    page（integer）：翻页数，默认为第一页，可设置更大的页面数，能够爬取更多数据
+'''
 VERIFY_API = "https://fofa.so/api/v1/info/my?email={FOFA_EMAIL}&key={API_KEY}"
-SEARCH_API = "https://fofa.so/api/v1/search/all?email={FOFA_EMAIL}&key={API_KEY}&qbase64={B64_DATA}&size=100&page={page}"
+SEARCH_API = "https://fofa.so/api/v1/search/all?email={FOFA_EMAIL}&key={API_KEY}&qbase64={B64_DATA}&size=100&page=100"
 
 
 FULL_FILE = "result-{time}.txt".format(
